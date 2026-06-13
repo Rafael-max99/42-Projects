@@ -1,0 +1,71 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rlauren <rlauren@student.42lisboa.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/11/03 21:08:07 by rlauren           #+#    #+#             */
+/*   Updated: 2025/11/06 21:03:05 by rlauren          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+/*
+static t_list	*ft_lstnew(void *content)
+{
+	t_list	*node;
+
+	node = malloc(sizeof(t_list));
+	if (!node)
+		return (NULL);
+	(*node).content = content;
+	(*node).next = NULL;
+	return (node);
+}
+*/
+
+/*
+static void	ft_print_list(t_list *lst)
+{
+	while (lst)
+	{
+		printf("%s -> ", (char *)(*lst).content);
+		lst = (*lst).next;
+	}
+	printf("NULL\n");
+}
+*/
+
+void	ft_lstadd_front(t_list **lst, t_list *new)
+{
+	if (!lst || !new)
+		return ;
+	(*new).next = *lst;
+	*lst = new;
+}
+/*
+int	main(void)
+{
+	t_list	*list;
+	t_list	*node1;
+	t_list	*node2;
+	t_list	*node3;
+	t_list	*node4;
+
+	list = NULL;
+	node1 = ft_lstnew("n1");
+	node2 = ft_lstnew("n2");
+	node3 = ft_lstnew("n3");
+	node4 = ft_lstnew("n4");
+	list = node1;
+	ft_print_list(list);
+	ft_lstadd_front(&list, node2);
+	ft_print_list(list);
+	ft_lstadd_front(&list, node3);
+	ft_print_list(list);
+	ft_lstadd_front(&list, node4);
+	return (0);
+}
+*/
